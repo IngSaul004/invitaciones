@@ -28,12 +28,12 @@ document.addEventListener('click', () => {
       <div class="menu-icons">
         <div class="user-icon">
           <RouterLink to="/Login">
-          <img src="../../public/img/usuario.png" alt="Usuario">
+          <img src="../assets/usuario.png" alt="Usuario">
           </RouterLink>
         </div>
 
         <div class="menu-toggle" @click.stop="toggleMenu">
-          <img src="../../public/img/menu.png" alt="Menú" />
+          <img src="../assets/menu.png" alt="Menú" />
           <ul class="dropdown" v-show="mostrarMenu">
             <li><a href="#">Inicio</a></li>
             <li><a href="#">Nosotros</a></li>

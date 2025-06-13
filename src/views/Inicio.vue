@@ -1,10 +1,7 @@
 <script setup>
- import Menu from '../component/menu.vue'
- import Footer from '../component/footer.vue'
 </script>
 
 <template>
-  <Menu></Menu>
   <main>
     <section id="servicios">
     <h2>¿Qué ofrecemos?</h2>
@@ -30,7 +27,6 @@
     </div>
   </section>
   </main>
-  <Footer></Footer>
 </template>
 <style>
 main{

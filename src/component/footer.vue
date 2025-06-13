@@ -6,9 +6,9 @@
 <footer>
     <p>&copy; 2025 PersoInvitaMX. Todos los derechos reservados.</p>
     <div class="redes">  
-    <a href="#"><img src="../../public/img/facebook.png"></a>
-    <a href="#"><img src="../../public/img/ig.png"></a>
-    <a href="#"><img src="../../public/img/tiktok.png"></a>
+    <a href="#"><img src="../assets/facebook.png"></a>
+    <a href="#"><img src="../assets/ig.png"></a>
+    <a href="#"><img src="../assets/tiktok.png"></a>
     </div>
     <p>Visitanos en nuestras redes</p>
   </footer>
