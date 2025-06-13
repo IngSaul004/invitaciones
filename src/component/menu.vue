@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import { RouterLink } from 'vue-router'
 
 const mostrarMenu = ref(false)
 
@@ -26,7 +27,9 @@ document.addEventListener('click', () => {
 
       <div class="menu-icons">
         <div class="user-icon">
+          <RouterLink to="/Login">
           <img src="../../public/img/usuario.png" alt="Usuario">
+          </RouterLink>
         </div>
 
         <div class="menu-toggle" @click.stop="toggleMenu">
