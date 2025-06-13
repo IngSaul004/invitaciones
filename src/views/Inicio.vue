@@ -3,49 +3,56 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-    <section id="servicios">
+  <div class="wrapper">
+    <div class="content">
       <h2>¿Qué ofrecemos?</h2>
       <div class="cards">
         <RouterLink to="/portafolio">
           <div class="card">
             <h3>Bodas</h3>
-            <p>Invitaciones digitales elegantes y personalizadas para ese día tan especial.</p>
+            <p>Invitaciones digitales elegantes, románticas y personalizadas para tu día especial.</p>
           </div>
         </RouterLink>
         <RouterLink to="/portafolio">
           <div class="card">
             <h3>Cumpleaños</h3>
-            <p>Invitaciones digitales vibrantes y dinámicas para todas las edades y estilos.</p>
+            <p>Invitaciones digitales llenas de vida, ideales para todas las edades y estilos.</p>
           </div>
         </RouterLink>
         <RouterLink to="/portafolio">
           <div class="card">
             <h3>Eventos</h3>
-            <p>Invitaciones digitales para eventos corporativos, baby showers, graduaciones y más.</p>
+            <p>Invitaciones digitales modernas para baby showers, graduaciones y eventos corporativos.</p>
           </div>
         </RouterLink>
       </div>
-    </section>
+    </div>
+  </div>
 </template>
 
-
 <style scoped>
-main {
-  font-family: 'Segoe UI', sans-serif;
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 1rem;
   background: #fff;
-  color: #111;
-  padding: 40px 20px;
+  color: #000;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-section {
+.content {
   text-align: center;
+  max-width: 1200px;
+  width: 100%;
 }
 
 h2 {
   font-size: 2rem;
-  margin-bottom: 30px;
-  color: #000;
+  margin-bottom: 2rem;
   letter-spacing: 1px;
+  color: #111;
 }
 
 .cards {
@@ -57,23 +64,22 @@ h2 {
 
 .card {
   background: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 16px;
   padding: 24px;
-  width: 260px;
+  width: 280px;
   text-align: left;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: #000;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .card h3 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   margin-bottom: 10px;
   color: #000;
 }
@@ -86,5 +92,12 @@ h2 {
 
 a {
   text-decoration: none;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+  }
 }
 </style>

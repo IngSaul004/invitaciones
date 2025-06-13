@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { RouterLink } from 'vue-router'
 
 const mostrarMenu = ref(false)
@@ -9,36 +9,42 @@ const toggleMenu = (e) => {
   mostrarMenu.value = !mostrarMenu.value
 }
 
-// Cerrar el menú si se hace clic fuera
-document.addEventListener('click', () => {
+const cerrarMenu = () => {
   mostrarMenu.value = false
+}
+
+onMounted(() => {
+  document.addEventListener('click', cerrarMenu)
+})
+
+onBeforeUnmount(() => {
+  document.removeEventListener('click', cerrarMenu)
 })
 </script>
 
 <template>
   <header class="menu-header">
     <div class="menu-container">
-      <div class="menu-left"></div>
-
       <div class="menu-title">
-        <h1>PersoInvitaMX</h1>
-        <p>Invitaciones digitales con estilo único para cualquier evento</p>
+        <img src="../assets/logo.png" alt="Logo" class="logo-img" />
+        <div class="title-text">
+          <h1>PersoInvitaMX</h1>
+          <p>Invitaciones digitales únicas para cualquier evento</p>
+        </div>
       </div>
 
       <div class="menu-icons">
-        <div class="user-icon">
-          <RouterLink to="/Login">
-          <img src="../assets/usuario.png" alt="Usuario">
-          </RouterLink>
-        </div>
+        <RouterLink to="/Login" class="user-icon">
+          <img src="../assets/usuario.png" alt="Usuario" />
+        </RouterLink>
 
         <div class="menu-toggle" @click.stop="toggleMenu">
           <img src="../assets/menu.png" alt="Menú" />
           <ul class="dropdown" v-show="mostrarMenu">
-          <li><RouterLink to="/">Inicio</RouterLink></li>
-          <li><RouterLink to="/nosotros">Nosotros</RouterLink></li>
-          <li><RouterLink to="/contacto">Contacto</RouterLink></li>
-          <li><RouterLink to="/portafolio">Portafolio</RouterLink></li>
+            <li><RouterLink to="/">Inicio</RouterLink></li>
+            <li><RouterLink to="/nosotros">Nosotros</RouterLink></li>
+            <li><RouterLink to="/contacto">Contacto</RouterLink></li>
+            <li><RouterLink to="/portafolio">Portafolio</RouterLink></li>
           </ul>
         </div>
       </div>
@@ -46,76 +52,128 @@ document.addEventListener('click', () => {
   </header>
 </template>
 
-<style>
+<style scoped>
 .menu-header {
-  background-color: white;
-  color: black;
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff;
+  color: #000;
+  font-family: 'Segoe UI', sans-serif;
   padding: 20px 40px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font: bold;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
 .menu-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.menu-left,
-.menu-title,
-.menu-icons {
-  flex: 1;
-  font: bold;
+  flex-wrap: wrap;
 }
 
 .menu-title {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.logo-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.title-text h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.title-text p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 4px;
 }
 
 .menu-icons {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
   position: relative;
   justify-content: flex-end;
 }
 
-
-
 .user-icon img,
 .menu-toggle img {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   cursor: pointer;
-  margin-bottom: 8px;
+  filter: grayscale(100%);
+  transition: filter 0.2s ease;
+}
+
+.user-icon img:hover,
+.menu-toggle img:hover {
+  filter: grayscale(0%);
 }
 
 .dropdown {
   position: absolute;
-  top: 50px;
+  top: 45px;
   right: 0;
-  background-color: #222;
+  background-color: #000;
   padding: 10px 0;
-  border-radius: 8px;
+  border-radius: 10px;
   list-style: none;
-  width: 150px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  z-index: 100;
+  width: 160px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.2s ease-out;
 }
 
 .dropdown li {
-  padding: 10px;
+  padding: 12px 20px;
   text-align: right;
 }
 
 .dropdown li a {
-  color: white;
+  color: #fff;
   text-decoration: none;
+  font-size: 0.95rem;
 }
 
 .dropdown li:hover {
-  background-color: #444;
+  background-color: #222;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .title-text h1 {
+    font-size: 1.4rem;
+  }
+
+  .title-text p {
+    font-size: 0.8rem;
+  }
+
+  .menu-icons {
+    gap: 10px;
+  }
+
+  .logo-img {
+    width: 80px;
+    height: 80px;
+  }
 }
 </style>
