@@ -35,10 +35,10 @@ document.addEventListener('click', () => {
         <div class="menu-toggle" @click.stop="toggleMenu">
           <img src="../assets/menu.png" alt="Menú" />
           <ul class="dropdown" v-show="mostrarMenu">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Contacto</a></li>
-            <li><a href="#">Portafolio</a></li>
+          <li><RouterLink to="/">Inicio</RouterLink></li>
+          <li><RouterLink to="/nosotros">Nosotros</RouterLink></li>
+          <li><RouterLink to="/contacto">Contacto</RouterLink></li>
+          <li><RouterLink to="/portafolio">Portafolio</RouterLink></li>
           </ul>
         </div>
       </div>
@@ -53,6 +53,7 @@ document.addEventListener('click', () => {
   font-family: Arial, Helvetica, sans-serif;
   padding: 20px 40px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font: bold;
 }
 
 .menu-container {
@@ -65,6 +66,7 @@ document.addEventListener('click', () => {
 .menu-title,
 .menu-icons {
   flex: 1;
+  font: bold;
 }
 
 .menu-title {
