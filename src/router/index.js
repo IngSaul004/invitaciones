@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Inicio from '../views/Inicio.vue'
-import login from '../views/Login.vue'
 import nosotros from '../views/nosotros.vue'
 import Contacto from '../views/contacto.vue'
 
@@ -11,11 +10,6 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: Inicio,
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component: login,
     },
     {
       path: '/nosotros',

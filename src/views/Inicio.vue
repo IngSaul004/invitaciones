@@ -7,24 +7,24 @@ import { RouterLink } from 'vue-router'
     <div class="content">
       <h2>¿Qué ofrecemos?</h2>
       <div class="cards">
-        <RouterLink to="/portafolio">
+        <a href="">
           <div class="card">
             <h3>Bodas</h3>
             <p>Invitaciones digitales elegantes, románticas y personalizadas para tu día especial.</p>
           </div>
-        </RouterLink>
-        <RouterLink to="/portafolio">
+        </a>
+        <a href="">
           <div class="card">
             <h3>Cumpleaños</h3>
             <p>Invitaciones digitales llenas de vida, ideales para todas las edades y estilos.</p>
           </div>
-        </RouterLink>
-        <RouterLink to="/portafolio">
+        </a>
+        <a href="">
           <div class="card">
             <h3>Eventos</h3>
             <p>Invitaciones digitales modernas para baby showers, graduaciones y eventos corporativos.</p>
           </div>
-        </RouterLink>
+        </a>
       </div>
     </div>
   </div>
@@ -68,6 +68,7 @@ h2 {
   border-radius: 16px;
   padding: 24px;
   width: 280px;
+  height: 150px;
   text-align: left;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease;

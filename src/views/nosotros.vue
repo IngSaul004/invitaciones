@@ -10,7 +10,7 @@
         XV años, eventos especiales y más. Contáctanos por nuestras redes sociales que
         aparecen abajo. Para cotizaciones directas, escríbenos por WhatsApp.
       </p>
-      <a href="https://wa.me/52TU_NUMERO" class="whatsapp-btn" target="_blank">
+      <a href="https://wa.me/523320428286" class="whatsapp-btn" target="_blank">
         🟢 Contáctanos por WhatsApp
       </a>
     </div>

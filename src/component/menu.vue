@@ -33,22 +33,15 @@ onBeforeUnmount(() => {
         </div>
       </div>
 
-      <div class="menu-icons">
-        <RouterLink to="/Login" class="user-icon">
-          <img src="../assets/usuario.png" alt="Usuario" />
-        </RouterLink>
-
         <div class="menu-toggle" @click.stop="toggleMenu">
           <img src="../assets/menu.png" alt="Menú" />
           <ul class="dropdown" v-show="mostrarMenu">
             <li><RouterLink to="/">Inicio</RouterLink></li>
             <li><RouterLink to="/nosotros">Nosotros</RouterLink></li>
             <li><RouterLink to="/contacto">Contacto</RouterLink></li>
-            <li><RouterLink to="/portafolio">Portafolio</RouterLink></li>
           </ul>
         </div>
       </div>
-    </div>
   </header>
 </template>
 
@@ -121,8 +114,8 @@ onBeforeUnmount(() => {
 
 .dropdown {
   position: absolute;
-  top: 45px;
-  right: 0;
+  top: 65px;
+  right: 35px;
   background-color: #000;
   padding: 10px 0;
   border-radius: 10px;
