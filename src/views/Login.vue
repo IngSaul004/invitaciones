@@ -33,7 +33,7 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60vh;
+  height: 80vh;
 }
 
 /* Estilo del formulario */
